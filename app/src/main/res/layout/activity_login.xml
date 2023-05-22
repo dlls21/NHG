@@ -17,42 +17,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nhg" />
 
-    <EditText
-        android:id="@+id/et_join_pw"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:background="#CCFFFFFF"
-        android:ems="10"
-        android:hint=" 비밀번호"
-        android:inputType="textPassword"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_join_id"
-        app:layout_constraintVertical_bias="0.050000012" />
-
-    <EditText
-        android:id="@+id/et_join_id"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:background="#CCFFFFFF"
-        android:ems="10"
-        android:hint=" 아이디"
-        android:inputType="text"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
-
     <Button
         android:id="@+id/btn_login_naver_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
         android:backgroundTint="#4CAF50"
         android:text="네이버 계정으로 로그인"
         app:iconTint="#FFFFFF"
@@ -60,32 +29,82 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_join_pw"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.87" />
 
-    <Button
-        android:id="@+id/btn_login_find_account"
+    <TextView
+        android:id="@+id/tv_login_find_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginEnd="220dp"
         android:text="계정 찾기"
-        app:iconPadding="0dp"
+        android:textColor="#66000000"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.295"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_join_pw"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/til_pw"
+        app:layout_constraintTop_toBottomOf="@id/til_pw"
+        app:layout_constraintVertical_bias="0.187" />
 
-    <Button
-        android:id="@+id/btn_login_join"
+    <TextView
+        android:id="@+id/tv_login_join"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="30dp"
         android:text="회원가입"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_login_find_account"
-        app:layout_constraintTop_toBottomOf="@+id/et_join_pw"
+        android:textColor="#66000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_login_find_account"
+        app:layout_constraintEnd_toEndOf="@id/til_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_login_find_account"
+        app:layout_constraintTop_toTopOf="@+id/tv_login_find_account"
         app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="이메일"
+        android:textColorHint="#66000000"
+        app:boxBackgroundColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_login"
+        app:layout_constraintVertical_bias="0.179">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textEmailAddress"
+            android:textColor="#CCFFFFFF" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_pw"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="비밀번호"
+        android:textColorHint="#66000000"
+        app:boxBackgroundColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_email"
+        app:layout_constraintVertical_bias="0.111">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tied_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textPassword"
+            android:textColor="#CCFFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
