@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BAD5DC">
+    android:background="@color/mainColor">
 
     <ImageView
         android:id="@+id/img_login"
@@ -19,7 +19,7 @@
 
     <Button
         android:id="@+id/btn_login_naver_login"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:backgroundTint="#4CAF50"
@@ -27,10 +27,10 @@
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_common_login"
+        app:layout_constraintVertical_bias="0.318" />
 
     <TextView
         android:id="@+id/tv_login_find_account"
@@ -44,8 +44,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/til_pw"
-        app:layout_constraintTop_toBottomOf="@id/til_pw"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_naver_login"
+        app:layout_constraintVertical_bias="0.344" />
 
     <TextView
         android:id="@+id/tv_login_join"
@@ -66,20 +66,20 @@
         android:id="@+id/til_email"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:hint="이메일"
         android:textColorHint="#66000000"
-        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_login"
-        app:layout_constraintVertical_bias="0.179">
+        app:layout_constraintVertical_bias="0.142">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="이메일"
             android:inputType="text|textEmailAddress"
             android:textColor="#CCFFFFFF" />
 
@@ -91,13 +91,13 @@
         android:layout_height="50dp"
         android:hint="비밀번호"
         android:textColorHint="#66000000"
-        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_email"
-        app:layout_constraintVertical_bias="0.111">
+        app:layout_constraintVertical_bias="0.079">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tied_pw"
@@ -106,5 +106,18 @@
             android:inputType="text|textPassword"
             android:textColor="#CCFFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login_common_login"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/subColor"
+        android:text="이메일로 로그인"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_pw"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
