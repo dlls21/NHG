@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.nhg.R;
 
-public class IntroActivity extends AppCompatActivity {
+public class IntroActivity extends AppCompatActivity {  // 로딩 하는 모습 구현하기(수 초간)
 
     private long curTime = System.currentTimeMillis();
     private long backBtnTime = 0;   // 뒤로 가기 종료
@@ -21,10 +21,8 @@ public class IntroActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 
-        if ((int) curTime == 2) {   // 화면 띄운지 2초 지나면 다음 화면으로 전환
             startActivity(intent);
             finish();
-        }
     }
 
     // 뒤로 가기 키 두 번 누르면 종료

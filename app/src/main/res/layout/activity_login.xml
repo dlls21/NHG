@@ -8,11 +8,10 @@
 
     <ImageView
         android:id="@+id/img_login"
-        android:layout_width="329dp"
-        android:layout_height="318dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nhg" />
@@ -21,21 +20,22 @@
         android:id="@+id/btn_login_naver_login"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="64dp"
         android:backgroundTint="#4CAF50"
         android:text="네이버 계정으로 로그인"
-        app:icon="@drawable/btn_naver_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_common_login"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_login_find_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="220dp"
         android:text="계정 찾기"
         android:textColor="#66000000"
@@ -43,9 +43,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/til_pw"
+        app:layout_constraintStart_toStartOf="@+id/til_join_pw"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_naver_login"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_login_join"
@@ -56,55 +56,59 @@
         android:textColor="#66000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_login_find_account"
-        app:layout_constraintEnd_toEndOf="@id/til_email"
+        app:layout_constraintEnd_toEndOf="@id/til_join_email"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_login_find_account"
         app:layout_constraintTop_toTopOf="@+id/tv_login_find_account"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_email"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:textColorHint="#66000000"
+        android:id="@+id/til_join_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_login"
-        app:layout_constraintVertical_bias="0.142">
+        app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_email"
+            android:id="@+id/tiet_join_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="이메일"
             android:inputType="text|textEmailAddress"
-            android:textColor="@color/lightgray" />
+            android:textColor="@color/black" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_pw"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint="비밀번호"
-        android:textColorHint="#66000000"
+        android:id="@+id/til_join_pw"
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_email"
+        app:layout_constraintTop_toBottomOf="@+id/til_join_email"
         app:layout_constraintVertical_bias="0.079">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_pw"
+            android:id="@+id/tiet_join_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="비밀번호"
             android:inputType="text|textPassword"
-            android:textColor="@color/lightgray" />
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -117,7 +121,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_pw"
+        app:layout_constraintTop_toBottomOf="@+id/til_join_pw"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,6 @@ public class LoginResultActivity extends AppCompatActivity {    // 로그인 값
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
         Intent intent = getIntent();
 
@@ -22,5 +21,16 @@ public class LoginResultActivity extends AppCompatActivity {    // 로그인 값
         String password = bundle.getString("password");
 
         //가져온 이메일과 비밀번호 체크하는 메서드 만들기!!!
+
     }
+//    public String getDataFromLoginActivity(@Nullable Intent intent) {
+//        if (intent != null) {
+//            intent = getIntent();
+//            Bundle bundle = intent.getExtras();
+//            String email = bundle.getString("email");
+//            String password = bundle.getString("password");
+//            return email, password;
+//        }
+//        else
+//            return false;
 }
