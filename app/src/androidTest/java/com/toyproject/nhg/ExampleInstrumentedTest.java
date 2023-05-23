@@ -1,4 +1,4 @@
-package com.example.nhg;
+package com.toyproject.nhg;
 
 import android.content.Context;
 

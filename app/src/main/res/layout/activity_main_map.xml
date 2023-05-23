@@ -18,7 +18,7 @@
             android:layout_width="349dp"
             android:layout_height="49dp"
             android:layout_marginTop="16dp"
-            android:background="#BAD5DC"
+            android:background="@color/mainColor"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,13 +35,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/menu2"
-                app:tint="#FFFFFF" />
+                app:tint="@color/white" />
 
             <EditText
                 android:id="@+id/et_main_searchbar"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
-                android:background="#FFFFFF"
+                android:background="@color/white"
                 android:ems="10"
                 android:hint="장소를 입력하세요."
                 android:inputType="text"
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            app:backgroundTint="#BAD5DC"
+            app:backgroundTint="@color/mainColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.955"

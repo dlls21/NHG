@@ -19,12 +19,12 @@
 
     <Button
         android:id="@+id/btn_login_naver_login"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:backgroundTint="#4CAF50"
         android:text="네이버 계정으로 로그인"
-        app:iconTint="#FFFFFF"
+        app:icon="@drawable/btn_naver_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:hint="이메일"
             android:inputType="text|textEmailAddress"
-            android:textColor="#CCFFFFFF" />
+            android:textColor="@color/lightgray" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,16 +100,16 @@
         app:layout_constraintVertical_bias="0.079">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tied_pw"
+            android:id="@+id/tiet_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text|textPassword"
-            android:textColor="#CCFFFFFF" />
+            android:textColor="@color/lightgray" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login_common_login"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/subColor"
