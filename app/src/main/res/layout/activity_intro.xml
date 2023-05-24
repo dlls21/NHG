@@ -11,6 +11,8 @@
         android:id="@+id/img_intro"
         android:layout_width="396dp"
         android:layout_height="415dp"
+        android:maxWidth="400dp"
+        android:maxHeight="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"

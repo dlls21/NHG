@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +13,9 @@ import com.example.nhg.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
+
+    // 뒤로 가기 종료 기능
+    private BackKeyShutDownFunction backKeyShutDownFunction = BackKeyShutDownFunction.getBackKeyShutDownFunction();
 
     TextInputEditText tiet_email,
                     tiet_pw;
@@ -64,6 +68,4 @@ public class LoginActivity extends AppCompatActivity {
 
     private void startActivityForResult(Intent intent, LoginRequestStatus loginSuccessCode) {
     }
-
-
 }

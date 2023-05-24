@@ -22,6 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class JoinActivity extends AppCompatActivity {
 
+    // 뒤로 가기 종료 기능
+    private BackKeyShutDownFunction backKeyShutDownFunction = BackKeyShutDownFunction.getBackKeyShutDownFunction();
+
     private FirebaseAuth firebaseAuth;  // 파이어베이스 인증
     private DatabaseReference databaseReference;    // 실시간 데이터베이스
 
