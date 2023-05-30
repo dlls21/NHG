@@ -46,12 +46,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/til_join_pw"
+        app:layout_constraintStart_toStartOf="@+id/til_login_pswd"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_naver_login"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_login_join"
+        android:id="@+id/tv_login_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -60,14 +60,14 @@
         android:textColor="#66000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_login_find_account"
-        app:layout_constraintEnd_toEndOf="@id/til_join_email"
+        app:layout_constraintEnd_toEndOf="@id/til_login_email"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_login_find_account"
         app:layout_constraintTop_toTopOf="@+id/tv_login_find_account"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_join_email"
+        android:id="@+id/til_login_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_join_email"
+            android:id="@+id/tiet_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="이메일"
@@ -92,7 +92,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_join_pw"
+        android:id="@+id/til_login_pswd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -103,12 +103,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_join_email"
+        app:layout_constraintTop_toBottomOf="@+id/til_login_email"
         app:layout_constraintVertical_bias="0.0"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_join_pw"
+            android:id="@+id/tiet_login_pswd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="비밀번호"
@@ -126,7 +126,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_join_pw"
+        app:layout_constraintTop_toBottomOf="@+id/til_login_pswd"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

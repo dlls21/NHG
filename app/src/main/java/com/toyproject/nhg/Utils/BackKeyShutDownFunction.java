@@ -1,4 +1,4 @@
-package com.toyproject.nhg;
+package com.toyproject.nhg.Utils;
 
 import android.widget.Toast;
 
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * 뒤로 가기 키 두 번 눌러 앱을 종료하는 기능
+ * 정적 메서드로 기능이 구현됨. //
  *
  * 구현 방법: 클래스 내에서 getBackKeyShutDownFunction() 메서드로 기능 가져오기
  */
@@ -15,13 +16,15 @@ public class BackKeyShutDownFunction extends AppCompatActivity {
     // 정적 변수로 종료 기능 객체 선언 (null)
     private static BackKeyShutDownFunction backKeyShutDownFunction = null;
 
-    // 종료 기능 객체 가져오기 (없으면 채워넣기)
+    // 종료 기능 객체 가져오기 (없으면 새로 생성해줌)
     public static BackKeyShutDownFunction getBackKeyShutDownFunction() {
         if (backKeyShutDownFunction == null) {
             backKeyShutDownFunction = new BackKeyShutDownFunction();
         }
         return backKeyShutDownFunction;
     }
+
+
 
     // 종료 기능 구현
      private long backBtnTime = 0;   // 뒤로 가기 누른 시간

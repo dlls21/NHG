@@ -1,8 +1,8 @@
-package com.toyproject.nhg;
+package com.toyproject.nhg.Utils;
 
 import android.widget.Toast;
 /**
- * !! 사용 하지 않는 인터페이스
+ * ※ !!!! 사용 하지 않는 인터페이스
  *
  * 뒤로 가기 키 두번 눌러 종료 기능
  * onBackPressed() 메서드 완성 시키기

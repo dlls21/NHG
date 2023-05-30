@@ -7,7 +7,7 @@
     android:background="#BAD5DC">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_join_email"
+        android:id="@+id/til_login_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_join_email"
+            android:id="@+id/tiet_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="이메일"
@@ -37,17 +37,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/subColor"
         android:text="중복확인"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/til_join_email"
+        app:layout_constraintBottom_toBottomOf="@+id/til_login_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/til_join_email"
-        app:layout_constraintTop_toTopOf="@+id/til_join_email"
+        app:layout_constraintStart_toEndOf="@+id/til_login_email"
+        app:layout_constraintTop_toTopOf="@+id/til_login_email"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_join_pw"
+        android:id="@+id/til_login_pswd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -56,11 +57,11 @@
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_join_email"
+        app:layout_constraintTop_toBottomOf="@+id/til_login_email"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_join_pw"
+            android:id="@+id/tiet_login_pswd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="비밀번호"
@@ -69,7 +70,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_join_pwcheck"
+        android:id="@+id/til_join_confirmpswd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -79,11 +80,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_join_pw"
+        app:layout_constraintTop_toBottomOf="@+id/til_login_pswd"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_join_pwcheck"
+            android:id="@+id/tiet_join_confirmpswd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="비밀번호 확인"
@@ -102,14 +103,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_join_pwcheck">
+        app:layout_constraintTop_toBottomOf="@+id/til_join_confirmpswd">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_join_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="이름"
-            android:inputType="text|textPassword"
+            android:inputType="text"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,7 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="닉네임"
-            android:inputType="text|textPassword"
+            android:inputType="text"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -143,6 +144,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/subColor"
         android:text="중복확인"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/til_join_nickname"
@@ -159,6 +161,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/subColor"
         android:text="회원가입"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

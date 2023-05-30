@@ -1,4 +1,4 @@
-package com.toyproject.nhg;
+package com.toyproject.nhg.Constants;
 
 public enum LoginRequestStatus {
     LOGIN_FAILURE_CODE,
