@@ -4,8 +4,10 @@ import static com.toyproject.nhg.Constants.SignupConstants.IS_AVAILABLE;
 import static com.toyproject.nhg.Constants.SignupConstants.IS_UNAVAILABLE;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,8 +20,9 @@ import com.toyproject.nhg.Constants.SignupValidity;
 import com.toyproject.nhg.Controller.SignupController;
 import com.toyproject.nhg.Model.User;
 import com.toyproject.nhg.Utils.BackKeyShutDownFunction;
-import com.toyproject.nhg.Utils.MakeToast;
 import com.toyproject.nhg.View.SignupView;
+
+import java.lang.reflect.Member;
 
 public class SignupActivity extends AppCompatActivity implements SignupView {
 
@@ -44,7 +47,6 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
 
     private SignupController signupController;
     private User user;
-    private MakeToast makeToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,81 +75,141 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
             @Override
             public void onClick(View v) {
                 String email = tiet_join_email.getText().toString();
-                boolean emailAvailability = signupController.checkEmailAvailability(email);
-
-                if (emailAvailability == IS_AVAILABLE) {
-                    email_is_checked = IS_AVAILABLE;
+                if (!TextUtils.isEmpty(email)) {
+                    signupController.checkEmailAvailability(email);
                 } else {
-                    email_is_checked = IS_UNAVAILABLE;
+                    showToast("이메일을 입력해주세요.");
                 }
             }
         });
+//            @Override
+//            public void onClick(View v) {
+//                String email = tiet_join_email.getText().toString();
+//                boolean emailAvailability = signupController.checkEmailAvailability(email);
+//
+//                if (emailAvailability == IS_AVAILABLE) {
+//                    email_is_checked = IS_AVAILABLE;
+//                } else {
+//                    email_is_checked = IS_UNAVAILABLE;
+//                }
+//            }
+//        });
 
-        //// 여기서부터 다시 디버깅!!
+
         // 닉네임 중복확인 버튼 구현
         btn_join_nick_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nickName = tiet_join_nickname.getText().toString();
-                boolean nickNameAvailability = signupController.checkNicknameAvailability(nickName);
-
-                if (nickNameAvailability == IS_AVAILABLE) {
-                    nickName_is_checked = IS_AVAILABLE;
-
+                String nickname = tiet_join_nickname.getText().toString();
+                if (!TextUtils.isEmpty(nickname)) {
+                    signupController.checkNicknameAvailability(nickname);
                 } else {
-                    nickName_is_checked = IS_UNAVAILABLE;
-
+                    showToast("닉네임을 입력해주세요.");
                 }
             }
         });
+
+//        @Override
+//        public void onClick(View v) {
+//            String nickName = tiet_join_nickname.getText().toString();
+//            boolean nickNameAvailability = signupController.checkNicknameAvailability(nickName);
+//
+//            if (nickNameAvailability == IS_AVAILABLE) {
+//                nickName_is_checked = IS_AVAILABLE;
+//
+//            } else {
+//                nickName_is_checked = IS_UNAVAILABLE;
+//
+//            }
+//        }
+//    });
+
 
         // 회원가입 버튼 구현
         btn_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String strEmail = tiet_join_email.getText().toString();
-                String strPassword = tiet_join_pswd.getText().toString();
-                String strconfirmPassword = tiet_join_confirmpswd.getText().toString();
-                String strName = tiet_join_name.getText().toString();
-                String strNickName = tiet_join_nickname.getText().toString();
-                user = new User(strEmail, strPassword, strName, strNickName);
+                    String email = tiet_join_email.getText().toString();
+                    String password = tiet_join_pswd.getText().toString();
+                    String confirmPassword = tiet_join_confirmpswd.getText().toString();
+                    String name = tiet_join_name.getText().toString();
+                    String nickname = tiet_join_nickname.getText().toString();
 
-                // 회원가입 항목별 입력값들 유효성 검사 변수
-                SignupValidity signup_validity;
-
-                // 이메일, 닉네임 중복확인을 모두 끝냈으면, 모든 입력값의 유효성 검사를 시작하고
-                // 회원가입 유효성을 SIGNUP_IS_VALID을 가짐
-                if (!(email_is_checked == IS_AVAILABLE && nickName_is_checked == IS_AVAILABLE)) {
-                    signup_validity = SignupValidity.SIGNUP_IS_INVALID;
-                } else { // 각 입력값들 유효성 검사 메서드
-                    signup_validity = signupController.
-                            isValidId(user.getEmail(), user.getPassword(), user.getConfirmPassword(), user.getConfirmPassword(), user.getNickname());
+                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword) || TextUtils.isEmpty(nickname)) {
+                        showToast("모든 필드를 입력해주세요.");
+                } else if (!password.equals(confirmPassword)) {
+                        showToast("비밀번호가 일치하지 않습니다.");
+                } else {
+                        User user = new User(email, password, name, nickname);
+                        signupController.performSignup(user);
+                        showSignUpSuccess();
                 }
-
-                // 회원가입 유효성이 있다면
-                if (signup_validity.equals(SignupValidity.SIGNUP_IS_VALID)) {
-
-                        // 회원가입 처리를 수행합니다.
-                    signupController.performSignup(user);
-                }
-//                else {
-//                    makeToast = new MakeToast("회원가입 실패!");
-//                }
             }
         });
+
+//        @Override
+//        public void onClick(View v) {
+//            String strEmail = tiet_join_email.getText().toString();
+//            String strPassword = tiet_join_pswd.getText().toString();
+//            String strconfirmPassword = tiet_join_confirmpswd.getText().toString();
+//            String strName = tiet_join_name.getText().toString();
+//            String strNickName = tiet_join_nickname.getText().toString();
+//            user = new User(strEmail, strPassword, strName, strNickName);
+//
+//            // 회원가입 항목별 입력값들 유효성 검사 변수
+//            SignupValidity signup_validity;
+//
+//            // 이메일, 닉네임 중복확인을 모두 끝냈으면, 모든 입력값의 유효성 검사를 시작하고
+//            // 회원가입 유효성을 SIGNUP_IS_VALID을 가짐
+//            if (!(email_is_checked == IS_AVAILABLE && nickName_is_checked == IS_AVAILABLE)) {
+//                signup_validity = SignupValidity.SIGNUP_IS_INVALID;
+//            } else { // 각 입력값들 유효성 검사 메서드
+//                signup_validity = signupController.
+//                        isValidId(user.getEmail(), user.getPassword(), user.getConfirmPassword(), user.getConfirmPassword(), user.getNickname());
+//            }
+//
+//            // 회원가입 유효성이 있다면
+//            if (signup_validity.equals(SignupValidity.SIGNUP_IS_VALID)) {
+//
+//                // 회원가입 처리를 수행합니다.
+//                signupController.performSignup(user);
+//            }
+////                else {
+////                    showToast("회원가입 실패!");
+////                }
+//        }
+
     }
 
 
     @Override
     public void showEmailAvailability(boolean isAvailable) {
         if (isAvailable == IS_AVAILABLE)
-            makeToast = new MakeToast("사용 가능한 이메일입니다.");
-
+            showToast("사용 가능한 이메일입니다.");
+        else
+            showToast("이미 사용 중인 이메일입니다.");
     }
 
     @Override
     public void showNicknameAvailability(boolean isAvailable) {
         if (isAvailable == IS_AVAILABLE)
-            makeToast = new MakeToast("사용 가능한 닉네임입니다.");
+            showToast("사용 가능한 닉네임입니다.");
+        else
+            showToast("이미 사용 중인 닉네임입니다.");
+    }
+
+    @Override
+    public void showSignUpSuccess() {
+        showToast("회원가입에 성공했습니다.");
+        finish();
+    }
+
+    @Override
+    public void showSignUpFailure() {
+        showToast("회원가입에 실패했습니다.");
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
