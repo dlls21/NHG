@@ -1,6 +1,5 @@
-package com.toyproject.nhg.Utils;
+package com.toyproject.nhg.utils;
 
-import android.widget.Toast;
 /**
  * ※ !!!! 사용 하지 않는 인터페이스
  *

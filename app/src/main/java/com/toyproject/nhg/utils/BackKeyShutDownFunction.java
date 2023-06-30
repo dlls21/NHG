@@ -1,4 +1,4 @@
-package com.toyproject.nhg.Utils;
+package com.toyproject.nhg.utils;
 
 import android.widget.Toast;
 

@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nhg.R;
 import com.google.android.material.textfield.TextInputEditText;
-import com.toyproject.nhg.Constants.LoginRequestStatus;
-import com.toyproject.nhg.Utils.BackKeyShutDownFunction;
+import com.toyproject.nhg.constants.LoginRequestStatus;
+import com.toyproject.nhg.utils.BackKeyShutDownFunction;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -46,10 +46,14 @@ public class LoginActivity extends AppCompatActivity {
                 String email = tiet_login_email.getText().toString();
                 String password = tiet_login_pswd.getText().toString();
 
-                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);  // 로그인 결과 클래스 만들기
-                intent.putExtra("email", email);
-                intent.putExtra("password", password);
-                startActivityForResult(intent, LoginRequestStatus.LOGIN_SUCCESS_CODE);
+//                // 로그인 정보 서버에 던지기 ( 구현 중)
+//                Intent login_intent = new Intent();
+//                login_intent.putExtra("email", email);
+//                login_intent.putExtra("password", password);
+
+                Intent intent = new Intent(LoginActivity.this, MainMapActivity.class);
+
+                startActivity(intent);
             }
         });
 

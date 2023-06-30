@@ -38,4 +38,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_navigation_drawer">navigation_drawer</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_main_map">MainMapActivity</string>
+
 </resources>

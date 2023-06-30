@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/img_login"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginTop="50dp"
         android:maxWidth="200dp"
         android:maxHeight="200dp"
@@ -22,7 +22,7 @@
         android:id="@+id/btn_login_naver_login"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="64dp"
         android:backgroundTint="#4CAF50"
         android:text="네이버 계정으로 로그인"
@@ -37,12 +37,12 @@
         android:id="@+id/tv_login_find_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="220dp"
         android:clickable="true"
         android:text="계정 찾기"
         android:textColor="#66000000"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -58,7 +58,7 @@
         android:clickable="true"
         android:text="회원가입"
         android:textColor="#66000000"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_login_find_account"
         app:layout_constraintEnd_toEndOf="@id/til_login_email"
         app:layout_constraintHorizontal_bias="0.0"
@@ -71,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="40dp"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,7 +84,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_login_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="이메일"
             android:inputType="text|textEmailAddress"
             android:textColor="@color/black" />
@@ -96,7 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -110,7 +110,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_login_pswd"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="비밀번호"
             android:inputType="text|textPassword"
             android:textColor="@color/black" />
@@ -128,5 +128,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_login_pswd"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="|"
+        android:textColor="#66000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_login_find_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_login_find_account" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

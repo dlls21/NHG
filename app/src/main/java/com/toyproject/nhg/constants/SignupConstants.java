@@ -1,4 +1,4 @@
-package com.toyproject.nhg.Constants;
+package com.toyproject.nhg.constants;
 
 public class SignupConstants {
     public static final boolean IS_AVAILABLE = true;

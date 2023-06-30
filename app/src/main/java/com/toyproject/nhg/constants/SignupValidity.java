@@ -1,4 +1,4 @@
-package com.toyproject.nhg.Constants;
+package com.toyproject.nhg.constants;
 
 public enum SignupValidity {
     SIGNUP_IS_VALID,
